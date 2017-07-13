@@ -13,7 +13,7 @@ const interceptorDefaultConfig = {
   db: null,
   host: '',
   requestDelay: 0,
-  routes: { GET: {}, POST: {}, PUT: {}, DELETE: {} },
+  routes: { GET: {}, POST: {}, PUT: {}, DELETE: {}, PATCH: {} },
 };
 
 export class Router {
@@ -32,6 +32,10 @@ export class Router {
 
   put(...args) {
     this.register('PUT', ...args);
+  }
+
+  patch(...args) {
+    this.register('PATCH', ...args);
   }
 
   delete(...args) {
